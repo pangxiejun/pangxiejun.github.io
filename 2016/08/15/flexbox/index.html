@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css,前端,布局," />
+  <meta name="keywords" content="前端,css,布局," />
 
 
 
@@ -84,16 +84,31 @@
 
 
 
-<meta name="description" content="在垂直居中当中，flexbox可以说是">
+<meta name="description" content="现在有很多种垂直居中的方法，今天我们就来看看有哪些方法###首先我们看一下line-height,line-height主要用于单行文本和非块级元素，而且我们需要知道div的高度。来从例子看一下吧
+123&amp;lt;div class=&quot;text&quot;&amp;gt;	我爱你中国！&amp;lt;/div&amp;gt;
+
+要让文字居中我想大家都知道怎么做，我这就不废话了直接上代码。
+
+123456.text&amp;#123;	wid">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于flexbox布局的">
+<meta property="og:title" content="实现垂直居中的方法有哪些？">
 <meta property="og:url" content="http://yoursite.com/2016/08/15/flexbox/index.html">
 <meta property="og:site_name" content="crab">
-<meta property="og:description" content="在垂直居中当中，flexbox可以说是">
-<meta property="og:updated_time" content="2016-08-15T07:36:10.000Z">
+<meta property="og:description" content="现在有很多种垂直居中的方法，今天我们就来看看有哪些方法###首先我们看一下line-height,line-height主要用于单行文本和非块级元素，而且我们需要知道div的高度。来从例子看一下吧
+123&amp;lt;div class=&quot;text&quot;&amp;gt;	我爱你中国！&amp;lt;/div&amp;gt;
+
+要让文字居中我想大家都知道怎么做，我这就不废话了直接上代码。
+
+123456.text&amp;#123;	wid">
+<meta property="og:updated_time" content="2016-08-17T02:05:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于flexbox布局的">
-<meta name="twitter:description" content="在垂直居中当中，flexbox可以说是">
+<meta name="twitter:title" content="实现垂直居中的方法有哪些？">
+<meta name="twitter:description" content="现在有很多种垂直居中的方法，今天我们就来看看有哪些方法###首先我们看一下line-height,line-height主要用于单行文本和非块级元素，而且我们需要知道div的高度。来从例子看一下吧
+123&amp;lt;div class=&quot;text&quot;&amp;gt;	我爱你中国！&amp;lt;/div&amp;gt;
+
+要让文字居中我想大家都知道怎么做，我这就不废话了直接上代码。
+
+123456.text&amp;#123;	wid">
 
 
 
@@ -116,7 +131,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2016/08/15/flexbox/"/>
 
-  <title> 关于flexbox布局的 | crab </title>
+  <title> 实现垂直居中的方法有哪些？ | crab </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -276,7 +291,7 @@
             
             
               
-                关于flexbox布局的
+                实现垂直居中的方法有哪些？
               
             
           </h1>
@@ -342,7 +357,19 @@
       
 
       
-        <h4 id="在垂直居中当中，flexbox可以说是"><a href="#在垂直居中当中，flexbox可以说是" class="headerlink" title="在垂直居中当中，flexbox可以说是"></a>在垂直居中当中，flexbox可以说是</h4>
+        <h4 id="现在有很多种垂直居中的方法，今天我们就来看看有哪些方法"><a href="#现在有很多种垂直居中的方法，今天我们就来看看有哪些方法" class="headerlink" title="现在有很多种垂直居中的方法，今天我们就来看看有哪些方法"></a>现在有很多种垂直居中的方法，今天我们就来看看有哪些方法</h4><p>###首先我们看一下line-height,line-height主要用于单行文本和非块级元素，而且我们需要知道div的高度。来从例子看一下吧</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span></div><div class="line">	我爱你中国！</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>要让文字居中我想大家都知道怎么做，我这就不废话了直接上代码。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.text</span>&#123;</div><div class="line">	<span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">	<span class="attribute">height</span>:<span class="number">2rem</span>;</div><div class="line">	<span class="attribute">line-height</span>:<span class="number">2rem</span>;</div><div class="line">	<span class="attribute">font-size</span>:<span class="number">1rem</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>####第二种，就是使用绝对定位的方式，这种的有点就是可以使块级元素垂直居中，但是有一点就是我们必须知道这个会块级元素的宽高,下面我们来写一个列子</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content-text"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>我爱你中国！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>我爱你家乡！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>直接贴上代码</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.content</span>&#123;</div><div class="line">	<span class="attribute">position</span>:relative;</div><div class="line">	<span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">	<span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.content</span> <span class="selector-class">.content-text</span>&#123;</div><div class="line">	<span class="attribute">position</span>:absolute;</div><div class="line">	<span class="attribute">top</span>:<span class="number">50%</span>;</div><div class="line">	<span class="attribute">left</span>:<span class="number">50%</span>;</div><div class="line">	<span class="attribute">width</span>:<span class="number">100px</span>;</div><div class="line">	<span class="attribute">height</span>:<span class="number">150px</span>;</div><div class="line">	<span class="attribute">margin-left</span>:-<span class="number">50px</span>;</div><div class="line">	<span class="attribute">margin-top</span>:-<span class="number">75px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.content</span> <span class="selector-class">.content-text</span> <span class="selector-class">.text</span>&#123;</div><div class="line">	<span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">	<span class="attribute">text-align</span>:center;</div><div class="line">	<span class="attribute">color</span>:<span class="number">#999</span>;</div><div class="line">	<span class="attribute">font-size</span>:<span class="number">1rem</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -364,9 +391,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag">#css</a>
-          
             <a href="/tags/前端/" rel="tag">#前端</a>
+          
+            <a href="/tags/css/" rel="tag">#css</a>
           
             <a href="/tags/布局/" rel="tag">#布局</a>
           
@@ -399,7 +426,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2016/08/15/flexbox/"
-     data-title="关于flexbox布局的"
+     data-title="实现垂直居中的方法有哪些？"
      data-content=""
      data-url="http://yoursite.com/2016/08/15/flexbox/">
   <div class="ds-share-inline">
@@ -429,7 +456,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/08/15/flexbox/"
-           data-title="关于flexbox布局的" data-url="http://yoursite.com/2016/08/15/flexbox/">
+           data-title="实现垂直居中的方法有哪些？" data-url="http://yoursite.com/2016/08/15/flexbox/">
       </div>
     
   </div>
@@ -549,7 +576,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#在垂直居中当中，flexbox可以说是"><span class="nav-number">1.</span> <span class="nav-text">在垂直居中当中，flexbox可以说是</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#现在有很多种垂直居中的方法，今天我们就来看看有哪些方法"><span class="nav-number">1.</span> <span class="nav-text">现在有很多种垂直居中的方法，今天我们就来看看有哪些方法</span></a></li></ol></div>
             
           </div>
         </section>
