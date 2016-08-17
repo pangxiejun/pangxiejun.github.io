@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端,js," />
+  <meta name="keywords" content="前端,css,input,html," />
 
 
 
@@ -84,16 +84,21 @@
 
 
 
-<meta name="description" content="这个是不是经常用到呢，相信做过开发的都会了，那我们就不多说了，直接来看下简单的实现方法">
+<meta name="description" content="前面我们讲了单选与多选的自定义样式问题，今天我们来看看关于下拉列表的自定义样式的问题
+这个问题在我们的项目中经常可见，我们可以去参考bootstrap的select,废话不多说，直接看看如何实现的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js短信倒计时">
-<meta property="og:url" content="http://yoursite.com/2016/08/17/js短信倒计时/index.html">
+<meta property="og:title" content="下拉列表自定义样式">
+<meta property="og:url" content="http://yoursite.com/2016/08/17/下拉列表自定义样式/index.html">
 <meta property="og:site_name" content="crab">
-<meta property="og:description" content="这个是不是经常用到呢，相信做过开发的都会了，那我们就不多说了，直接来看下简单的实现方法">
-<meta property="og:updated_time" content="2016-08-17T03:33:46.000Z">
+<meta property="og:description" content="前面我们讲了单选与多选的自定义样式问题，今天我们来看看关于下拉列表的自定义样式的问题
+这个问题在我们的项目中经常可见，我们可以去参考bootstrap的select,废话不多说，直接看看如何实现的">
+<meta property="og:image" content="https://dn-weazm-work.qbox.me/blog_blog1.png">
+<meta property="og:updated_time" content="2016-08-17T08:38:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js短信倒计时">
-<meta name="twitter:description" content="这个是不是经常用到呢，相信做过开发的都会了，那我们就不多说了，直接来看下简单的实现方法">
+<meta name="twitter:title" content="下拉列表自定义样式">
+<meta name="twitter:description" content="前面我们讲了单选与多选的自定义样式问题，今天我们来看看关于下拉列表的自定义样式的问题
+这个问题在我们的项目中经常可见，我们可以去参考bootstrap的select,废话不多说，直接看看如何实现的">
+<meta name="twitter:image" content="https://dn-weazm-work.qbox.me/blog_blog1.png">
 
 
 
@@ -114,9 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/17/js短信倒计时/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/17/下拉列表自定义样式/"/>
 
-  <title> js短信倒计时 | crab </title>
+  <title> 下拉列表自定义样式 | crab </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -276,7 +281,7 @@
             
             
               
-                js短信倒计时
+                下拉列表自定义样式
               
             
           </h1>
@@ -288,7 +293,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T11:20:50+08:00" content="2016-08-17">
+            <time itemprop="dateCreated" datetime="2016-08-17T16:17:46+08:00" content="2016-08-17">
               2016-08-17
             </time>
           </span>
@@ -302,8 +307,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/input/" itemprop="url" rel="index">
+                    <span itemprop="name">input</span>
                   </a>
                 </span>
 
@@ -318,8 +323,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/17/js短信倒计时/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/17/js短信倒计时/" itemprop="commentsCount"></span>
+                <a href="/2016/08/17/下拉列表自定义样式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/17/下拉列表自定义样式/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -342,17 +347,22 @@
       
 
       
-        <h4 id="这个是不是经常用到呢，相信做过开发的都会了，那我们就不多说了，直接来看下简单的实现方法"><a href="#这个是不是经常用到呢，相信做过开发的都会了，那我们就不多说了，直接来看下简单的实现方法" class="headerlink" title="这个是不是经常用到呢，相信做过开发的都会了，那我们就不多说了，直接来看下简单的实现方法"></a>这个是不是经常用到呢，相信做过开发的都会了，那我们就不多说了，直接来看下简单的实现方法</h4><a id="more"></a>
-<blockquote>
-<p>首先我们需要一个按钮触发</p>
+        <h4 id="前面我们讲了单选与多选的自定义样式问题，今天我们来看看关于下拉列表的自定义样式的问题"><a href="#前面我们讲了单选与多选的自定义样式问题，今天我们来看看关于下拉列表的自定义样式的问题" class="headerlink" title="前面我们讲了单选与多选的自定义样式问题，今天我们来看看关于下拉列表的自定义样式的问题"></a>前面我们讲了单选与多选的自定义样式问题，今天我们来看看关于下拉列表的自定义样式的问题</h4><blockquote>
+<p>这个问题在我们的项目中经常可见，我们可以去参考bootstrap的select,废话不多说，直接看看如何实现的</p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">"submit"</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">value</span>=<span class="string">"免费获取验证码"</span>&gt;</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>普通的下拉列表无论在手机端还是pc端都是属于不耐看的那种，所以为了让用户看的舒服，下拉列表也加入了整容的大军中<br>我们来看一下整容之后的一个代表，然后来分析它的整容过程</p>
 <blockquote>
-<p>然后是js代码</p>
+<p>贴张它的整容照</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"> &lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"> <span class="keyword">var</span> wait=<span class="number">60</span>;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">time</span>(<span class="params">o</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (wait == <span class="number">0</span>) &#123;</div><div class="line">         o.removeAttribute(<span class="string">"disabled"</span>);</div><div class="line">         o.value=<span class="string">"免费获取验证码"</span>;</div><div class="line">         wait = <span class="number">60</span>;</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">           o.setAttribute(<span class="string">"disabled"</span>, <span class="literal">true</span>);</div><div class="line">           o.value=<span class="string">"重新发送("</span> + wait + <span class="string">")"</span>;</div><div class="line">            wait--;</div><div class="line">           setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                time(o)</div><div class="line">            &#125;,</div><div class="line">            <span class="number">1000</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>).onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;time(<span class="keyword">this</span>);&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="https://dn-weazm-work.qbox.me/blog_blog1.png" alt=""></p>
 <blockquote>
-<p>css代码我们就不写了，是不是非常简单呢，你GET到了吗？</p>
+<p>直接贴上开刀代码</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"select"</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"基础功能"</span>&gt;</span>基础功能<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"高级功能"</span>&gt;</span>高级功能<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"电商功能"</span>&gt;</span>电商功能<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"社交功能"</span>&gt;</span>社交功能<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"非需求功能"</span>&gt;</span>非需求功能<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">select</span> &#123;</div><div class="line">  <span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>:<span class="number">44px</span>;</div><div class="line">  <span class="attribute">padding</span>:<span class="number">0</span> <span class="number">14px</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">font-size</span>:<span class="number">16px</span>;</div><div class="line">  <span class="attribute">color</span>:<span class="number">#F84C53</span>;</div><div class="line">  <span class="attribute">border</span>:none;</div><div class="line"></div><div class="line">  <span class="comment">/*很关键：将默认的select选择框样式清除*/</span></div><div class="line">  <span class="attribute">appearance</span>:none;</div><div class="line">  <span class="attribute">-moz-appearance</span>:none;</div><div class="line">  <span class="attribute">-webkit-appearance</span>:none;</div><div class="line"></div><div class="line">  <span class="comment">/*在选择框的最右侧中间显示小箭头图片*/</span></div><div class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"http://weazm-abc.qiniudn.com/weazm_xiala.png"</span>) no-repeat scroll right center transparent;</div><div class="line"></div><div class="line">  <span class="comment">/*为下拉小箭头留出一点位置，避免被文字覆盖*/</span></div><div class="line">  <span class="attribute">padding-right</span>: <span class="number">50px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>经过上面开刀之后，美化后的下拉列表就出现了，欢迎各位前来点评</p>
 </blockquote>
 
       
@@ -378,7 +388,11 @@
           
             <a href="/tags/前端/" rel="tag">#前端</a>
           
-            <a href="/tags/js/" rel="tag">#js</a>
+            <a href="/tags/css/" rel="tag">#css</a>
+          
+            <a href="/tags/input/" rel="tag">#input</a>
+          
+            <a href="/tags/html/" rel="tag">#html</a>
           
         </div>
       
@@ -387,17 +401,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/17/textarea限制输入长度问题/" rel="next" title="textarea限制输入长度问题">
-                <i class="fa fa-chevron-left"></i> textarea限制输入长度问题
+              <a href="/2016/08/17/js短信倒计时/" rel="next" title="js短信倒计时">
+                <i class="fa fa-chevron-left"></i> js短信倒计时
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/17/下拉列表自定义样式/" rel="prev" title="下拉列表自定义样式">
-                下拉列表自定义样式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -412,10 +422,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/17/js短信倒计时/"
-     data-title="js短信倒计时"
+        <div class="ds-share flat" data-thread-key="2016/08/17/下拉列表自定义样式/"
+     data-title="下拉列表自定义样式"
      data-content=""
-     data-url="http://yoursite.com/2016/08/17/js短信倒计时/">
+     data-url="http://yoursite.com/2016/08/17/下拉列表自定义样式/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -442,8 +452,8 @@
 
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/17/js短信倒计时/"
-           data-title="js短信倒计时" data-url="http://yoursite.com/2016/08/17/js短信倒计时/">
+      <div class="ds-thread" data-thread-key="2016/08/17/下拉列表自定义样式/"
+           data-title="下拉列表自定义样式" data-url="http://yoursite.com/2016/08/17/下拉列表自定义样式/">
       </div>
     
   </div>
@@ -563,7 +573,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#这个是不是经常用到呢，相信做过开发的都会了，那我们就不多说了，直接来看下简单的实现方法"><span class="nav-number">1.</span> <span class="nav-text">这个是不是经常用到呢，相信做过开发的都会了，那我们就不多说了，直接来看下简单的实现方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前面我们讲了单选与多选的自定义样式问题，今天我们来看看关于下拉列表的自定义样式的问题"><span class="nav-number">1.</span> <span class="nav-text">前面我们讲了单选与多选的自定义样式问题，今天我们来看看关于下拉列表的自定义样式的问题</span></a></li></ol></div>
             
           </div>
         </section>
