@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端,js,对象," />
+  <meta name="keywords" content="js,对象,前端," />
 
 
 
@@ -96,7 +96,7 @@
 在现实生活中，我们描述一个人的时候，我们会说这个人怎么怎么样。。。,如果用代码我们就可以这样去描述这个人
 
 1234567var xiaoguo = &amp;#123;    name: &apos;小郭&apos;,    birth: 1">
-<meta property="og:updated_time" content="2016-09-19T02:35:14.000Z">
+<meta property="og:updated_time" content="2016-09-19T02:36:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js学习笔记二：对象">
 <meta name="twitter:description" content="什么是对象，举个列子，比如我们说‘人’就是一个抽象概念，但是具体到某个人，比如你，我，他，就是一个‘人’对象。JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成。
@@ -350,10 +350,10 @@
 <p>由于JavaScript的对象是动态类型，你可以自由地给一个对象添加或删除属性：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoguo = &#123;</div><div class="line">    name: <span class="string">'小郭'</span></div><div class="line">&#125;;</div><div class="line">xiaoguo.age; <span class="comment">// undefined</span></div><div class="line">xiaoguo.age = <span class="number">18</span>; <span class="comment">// 新增一个age属性</span></div><div class="line">xiaoguo.age; <span class="comment">// 18</span></div><div class="line"><span class="keyword">delete</span> xiaoguo.age; <span class="comment">// 删除age属性</span></div><div class="line">xiaoguo.age; <span class="comment">// undefined</span></div><div class="line"><span class="keyword">delete</span> xiaoguo[<span class="string">'name'</span>]; <span class="comment">// 删除name属性</span></div><div class="line">xiaoguo.name; <span class="comment">// undefined</span></div><div class="line"><span class="keyword">delete</span> xiaoguo.school; <span class="comment">// 删除一个不存在的school属性也不会报错</span></div></pre></td></tr></table></figure>
 <blockquote>
-<p>如果我们要检测xiaoming是否拥有某一属性，可以用in操作符</p>
+<p>如果我们要检测xiaoguo是否拥有某一属性，可以用in操作符</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoguo = &#123;</div><div class="line">    name: <span class="string">'小郭'</span>,</div><div class="line">    birth: <span class="number">1991</span>,</div><div class="line">    height: <span class="number">1.70</span>,</div><div class="line">    weight: <span class="number">60</span>,</div><div class="line">    score: <span class="literal">null</span></div><div class="line">&#125;;</div><div class="line"><span class="string">'name'</span> <span class="keyword">in</span> xiaoguo <span class="comment">//true</span></div><div class="line"><span class="string">'age'</span> <span class="keyword">in</span> xiaoguo <span class="comment">//false</span></div></pre></td></tr></table></figure>
-<p>不过要小心，如果in判断一个属性存在，这个属性不一定是xiaoming的，它可能是xiaoming继承得到的：</p>
+<p>不过要小心，如果in判断一个属性存在，这个属性不一定是xiaoguo的，它可能是xiaoguo继承得到的：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoguo = &#123;</div><div class="line">    name: <span class="string">'小郭'</span>,</div><div class="line">    birth: <span class="number">1991</span>,</div><div class="line">    height: <span class="number">1.70</span>,</div><div class="line">    weight: <span class="number">60</span>,</div><div class="line">    score: <span class="literal">null</span></div><div class="line">&#125;;</div><div class="line"><span class="string">"toString"</span> <span class="keyword">in</span> xiaoguo <span class="comment">//true</span></div></pre></td></tr></table></figure>
 <blockquote>
 <p>因为toString定义在object对象中，而所有对象最终都会在原型链上指向object，所以xiaoguo也拥有toString属性。<br>要判断一个属性是否是xiaoguo自身拥有的，而不是继承得到的，可以用hasOwnProperty()方法：</p>
@@ -384,11 +384,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag">#前端</a>
-          
             <a href="/tags/js/" rel="tag">#js</a>
           
             <a href="/tags/对象/" rel="tag">#对象</a>
+          
+            <a href="/tags/前端/" rel="tag">#前端</a>
           
         </div>
       
