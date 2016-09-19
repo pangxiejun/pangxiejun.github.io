@@ -294,7 +294,7 @@
                 
 
               
-              <span class="post-count"> 总共码出了1,770字 </span>
+              <span class="post-count"> 总共码出了1,774字 </span>
             </span>
 
           
@@ -328,39 +328,12 @@
 
       
         
-          
-            <h5 id="什么是对象，举个列子，比如我们说‘人’就是一个抽象概念，但是具体到某个人，比如你，我，他，就是一个‘人’对象。JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成。"><a href="#什么是对象，举个列子，比如我们说‘人’就是一个抽象概念，但是具体到某个人，比如你，我，他，就是一个‘人’对象。JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成。" class="headerlink" title="什么是对象，举个列子，比如我们说‘人’就是一个抽象概念，但是具体到某个人，比如你，我，他，就是一个‘人’对象。JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成。"></a>什么是对象，举个列子，比如我们说‘人’就是一个抽象概念，但是具体到某个人，比如你，我，他，就是一个‘人’对象。JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成。</h5><blockquote>
-<p>在现实生活中，我们描述一个人的时候，我们会说这个人怎么怎么样。。。,如果用代码我们就可以这样去描述这个人</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoguo = &#123;</div><div class="line">    name: <span class="string">'小郭'</span>,</div><div class="line">    birth: <span class="number">1991</span>,</div><div class="line">    height: <span class="number">1.70</span>,</div><div class="line">    weight: <span class="number">60</span>,</div><div class="line">    score: <span class="literal">null</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>在javascript中，描述对象要用{}表示，里面是这个对象的一些属性，属性之间用逗号隔开，最后一个属性不用加，号</p>
-<p>那么假如我们想知道这个人的某个属性，该怎么去获取呢？</p>
-<blockquote>
-<p>访问属性是通过.操作符完成的，但这要求属性名必须是一个有效的变量名。如果属性名包含特殊字符，就必须用’’括起来</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoguo = &#123;</div><div class="line">    name: <span class="string">'小郭'</span>,</div><div class="line">   	<span class="string">'middle-school'</span>: <span class="string">'县立中学'</span>	</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>接下来就是去访问这些属性了</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">xiaoguo[<span class="string">'middle-school'</span>] <span class="comment">//县立中学</span></div><div class="line">xiaoguo[<span class="string">'name'</span>] <span class="comment">//小郭</span></div><div class="line">xiaoguo.name <span class="comment">//小郭</span></div><div class="line">xiaoguo.age <span class="comment">//undefined</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>xiaoguo的属性名middle-school不是一个有效的变量，就需要用’’括起来。访问这个属性也无法使用.操作符，必须用[‘xxx’]来访问,当访问一个不存在的属性时，将返回undefined</p>
-</blockquote>
-<p>由于JavaScript的对象是动态类型，你可以自由地给一个对象添加或删除属性：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoguo = &#123;</div><div class="line">    name: <span class="string">'小郭'</span></div><div class="line">&#125;;</div><div class="line">xiaoguo.age; <span class="comment">// undefined</span></div><div class="line">xiaoguo.age = <span class="number">18</span>; <span class="comment">// 新增一个age属性</span></div><div class="line">xiaoguo.age; <span class="comment">// 18</span></div><div class="line"><span class="keyword">delete</span> xiaoguo.age; <span class="comment">// 删除age属性</span></div><div class="line">xiaoguo.age; <span class="comment">// undefined</span></div><div class="line"><span class="keyword">delete</span> xiaoguo[<span class="string">'name'</span>]; <span class="comment">// 删除name属性</span></div><div class="line">xiaoguo.name; <span class="comment">// undefined</span></div><div class="line"><span class="keyword">delete</span> xiaoguo.school; <span class="comment">// 删除一个不存在的school属性也不会报错</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>如果我们要检测xiaoguo是否拥有某一属性，可以用in操作符</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoguo = &#123;</div><div class="line">    name: <span class="string">'小郭'</span>,</div><div class="line">    birth: <span class="number">1991</span>,</div><div class="line">    height: <span class="number">1.70</span>,</div><div class="line">    weight: <span class="number">60</span>,</div><div class="line">    score: <span class="literal">null</span></div><div class="line">&#125;;</div><div class="line"><span class="string">'name'</span> <span class="keyword">in</span> xiaoguo <span class="comment">//true</span></div><div class="line"><span class="string">'age'</span> <span class="keyword">in</span> xiaoguo <span class="comment">//false</span></div></pre></td></tr></table></figure>
-<p>不过要小心，如果in判断一个属性存在，这个属性不一定是xiaoguo的，它可能是xiaoguo继承得到的：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoguo = &#123;</div><div class="line">    name: <span class="string">'小郭'</span>,</div><div class="line">    birth: <span class="number">1991</span>,</div><div class="line">    height: <span class="number">1.70</span>,</div><div class="line">    weight: <span class="number">60</span>,</div><div class="line">    score: <span class="literal">null</span></div><div class="line">&#125;;</div><div class="line"><span class="string">"toString"</span> <span class="keyword">in</span> xiaoguo <span class="comment">//true</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>因为toString定义在object对象中，而所有对象最终都会在原型链上指向object，所以xiaoguo也拥有toString属性。<br>要判断一个属性是否是xiaoguo自身拥有的，而不是继承得到的，可以用hasOwnProperty()方法：</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaoguo = &#123;</div><div class="line">    name: <span class="string">'小郭'</span>,</div><div class="line">    birth: <span class="number">1991</span>,</div><div class="line">    height: <span class="number">1.70</span>,</div><div class="line">    weight: <span class="number">60</span>,</div><div class="line">    score: <span class="literal">null</span></div><div class="line">&#125;;</div><div class="line">xiaoguo.hasOwnProperty(<span class="string">'name'</span>) <span class="comment">//true</span></div><div class="line">xiaoguo.hasOwnProperty(<span class="string">'toString'</span>) <span class="comment">//false</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>本文大部分内容摘抄至廖雪峰大神的javascript教程，地址如下：<a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">（http://www.liaoxuefeng.com/)</a></p>
-</blockquote>
-
-          
+          <h5 id="什么是对象，举个列子，比如我们说‘人’就是一个抽象概念，但是具体到某个人，比如你，我，他，就是一个‘人’对象。JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成。"><a href="#什么是对象，举个列子，比如我们说‘人’就是一个抽象概念，但是具体到某个人，比如你，我，他，就是一个‘人’对象。JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成。" class="headerlink" title="什么是对象，举个列子，比如我们说‘人’就是一个抽象概念，但是具体到某个人，比如你，我，他，就是一个‘人’对象。JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成。"></a>什么是对象，举个列子，比如我们说‘人’就是一个抽象概念，但是具体到某个人，比如你，我，他，就是一个‘人’对象。JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成。</h5>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/18/js学习笔记二：对象/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
