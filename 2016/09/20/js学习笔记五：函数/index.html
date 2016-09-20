@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js,前端,函数," />
+  <meta name="keywords" content="前端,函数,js," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。">
+<meta name="description" content="函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。简单来说，就是实现某项功能的代码块。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js学习笔记五：函数">
 <meta property="og:url" content="http://yoursite.com/2016/09/20/js学习笔记五：函数/index.html">
 <meta property="og:site_name" content="crab">
-<meta property="og:description" content="天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。">
-<meta property="og:updated_time" content="2016-09-20T08:41:54.000Z">
+<meta property="og:description" content="函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。简单来说，就是实现某项功能的代码块。">
+<meta property="og:updated_time" content="2016-09-20T10:09:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js学习笔记五：函数">
-<meta name="twitter:description" content="天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。">
+<meta name="twitter:description" content="函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。简单来说，就是实现某项功能的代码块。">
 
 
 
@@ -290,7 +290,7 @@
                 
 
               
-              <span class="post-count"> 总共码出了0字 </span>
+              <span class="post-count"> 总共码出了1,059字 </span>
             </span>
 
           
@@ -323,7 +323,41 @@
       
 
       
-        
+        <h4 id="函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。简单来说，就是实现某项功能的代码块。"><a href="#函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。简单来说，就是实现某项功能的代码块。" class="headerlink" title="函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。简单来说，就是实现某项功能的代码块。"></a>函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。简单来说，就是实现某项功能的代码块。</h4><a id="more"></a>
+<h5 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> 函数名 (<span class="params">[参数1]，[参数2]</span>)</span>&#123;</div><div class="line">	语句;</div><div class="line">	[<span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">值</span>&gt;</span>]</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>简单的例子</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">abs</span> (<span class="params">a,b</span>)</span>&#123;</div><div class="line">	t = a + b;</div><div class="line">	<span class="keyword">return</span> t;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>function指出这是一个函数定义；</li>
+<li>abs是函数的名称；</li>
+<li>(a,b)括号内列出函数的参数，多个参数以,分隔；也可以不带参</li>
+<li>{ … }之间的代码是函数体，可以包含若干语句，甚至可以没有任何语句。</li>
+</ul>
+<h5 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h5><blockquote>
+<p>顾名思义，就是没有函数名的函数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> abs = <span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(x&gt;<span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">return</span> x;</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="keyword">return</span> -x;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这种等价于第一种函数定义，注意，一定要在最后加;号</p>
+</blockquote>
+<h5 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h5><blockquote>
+<p>调用函数时，按顺序传入参数即可：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">abs(<span class="number">3</span>,<span class="number">4</span>); <span class="comment">//返回7</span></div><div class="line">abs(<span class="number">9</span>); <span class="comment">//返回9</span></div><div class="line">abs(<span class="number">-9</span>); <span class="comment">//返回9</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>值得注意的是，即使多传几个参数，对结果并不会有影响</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">abs(<span class="number">3</span>,<span class="number">4</span>，<span class="string">"crab"</span>); <span class="comment">//返回7</span></div><div class="line">abs(<span class="number">9</span>,<span class="string">"crab"</span>); <span class="comment">//返回9</span></div><div class="line">abs(<span class="number">-9</span>,<span class="string">"crab"</span>); <span class="comment">//返回9</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果不传参数呢,此时abs(x)函数的参数x将收到undefined，计算结果为NaN。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">abs(); <span class="comment">//NaN</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>就写这么多了，后续有什么新的知识点在慢慢补上</p>
+</blockquote>
+
       
     </div>
 
@@ -345,11 +379,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag">#js</a>
-          
             <a href="/tags/前端/" rel="tag">#前端</a>
           
             <a href="/tags/函数/" rel="tag">#函数</a>
+          
+            <a href="/tags/js/" rel="tag">#js</a>
           
         </div>
       
@@ -530,7 +564,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。简单来说，就是实现某项功能的代码块。"><span class="nav-number">1.</span> <span class="nav-text">函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。简单来说，就是实现某项功能的代码块。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义函数"><span class="nav-number">1.1.</span> <span class="nav-text">定义函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#匿名函数"><span class="nav-number">1.2.</span> <span class="nav-text">匿名函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调用函数"><span class="nav-number">1.3.</span> <span class="nav-text">调用函数</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
