@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端,js,数组," />
+  <meta name="keywords" content="css,前端,js," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="如何把数组打乱随机抽取N个组成新的数组">
+<meta name="description" content="最近做一个项目，需要换肤，觉得自己有必要把这个东西写一下，越是简单的东西越容易被忽略嘛">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数组的打乱及随机抽取">
-<meta property="og:url" content="http://yoursite.com/2016/08/17/数组打乱随机抽取/index.html">
+<meta property="og:title" content="网页换肤实现">
+<meta property="og:url" content="http://yoursite.com/2016/10/17/网页换肤实现/index.html">
 <meta property="og:site_name" content="crab">
-<meta property="og:description" content="如何把数组打乱随机抽取N个组成新的数组">
-<meta property="og:updated_time" content="2016-09-18T07:44:04.000Z">
+<meta property="og:description" content="最近做一个项目，需要换肤，觉得自己有必要把这个东西写一下，越是简单的东西越容易被忽略嘛">
+<meta property="og:updated_time" content="2016-10-17T03:32:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数组的打乱及随机抽取">
-<meta name="twitter:description" content="如何把数组打乱随机抽取N个组成新的数组">
+<meta name="twitter:title" content="网页换肤实现">
+<meta name="twitter:description" content="最近做一个项目，需要换肤，觉得自己有必要把这个东西写一下，越是简单的东西越容易被忽略嘛">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/17/数组打乱随机抽取/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/17/网页换肤实现/"/>
 
-  <title> 数组的打乱及随机抽取 | crab </title>
+  <title> 网页换肤实现 | crab </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +256,7 @@
             
             
               
-                数组的打乱及随机抽取
+                网页换肤实现
               
             
           </h1>
@@ -268,8 +268,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-17T16:45:41+08:00" content="2016-08-17">
-              2016-08-17
+            <time itemprop="dateCreated" datetime="2016-10-17T11:12:59+08:00" content="2016-10-17">
+              2016-10-17
             </time>
           </span>
 
@@ -290,7 +290,7 @@
                 
 
               
-              <span class="post-count"> 总共码出了386字 </span>
+              <span class="post-count"> 总共码出了1,793字 </span>
             </span>
 
           
@@ -299,8 +299,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/17/数组打乱随机抽取/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/17/数组打乱随机抽取/" itemprop="commentsCount"></span>
+                <a href="/2016/10/17/网页换肤实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/17/网页换肤实现/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -323,11 +323,29 @@
       
 
       
-        <h4 id="如何把数组打乱随机抽取N个组成新的数组"><a href="#如何把数组打乱随机抽取N个组成新的数组" class="headerlink" title="如何把数组打乱随机抽取N个组成新的数组"></a>如何把数组打乱随机抽取N个组成新的数组</h4><a id="more"></a>
+        <h4 id="最近做一个项目，需要换肤，觉得自己有必要把这个东西写一下，越是简单的东西越容易被忽略嘛"><a href="#最近做一个项目，需要换肤，觉得自己有必要把这个东西写一下，越是简单的东西越容易被忽略嘛" class="headerlink" title="最近做一个项目，需要换肤，觉得自己有必要把这个东西写一下，越是简单的东西越容易被忽略嘛"></a>最近做一个项目，需要换肤，觉得自己有必要把这个东西写一下，越是简单的东西越容易被忽略嘛</h4><a id="more"></a>
+<p>首先我们看一下网页布局</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"outer"</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"skin"</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"skin_0"</span> <span class="attr">title</span>=<span class="string">"红色"</span>&gt;</span>红色<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"skin_1"</span> <span class="attr">title</span>=<span class="string">"绿色"</span>&gt;</span>绿色<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">           <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"skin_2"</span> <span class="attr">title</span>=<span class="string">"黄色"</span>&gt;</span>黄色<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">       <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <blockquote>
-<p>贴上代码</p>
+<p>当我们点击上面的li时，就会出现不同的背景颜色，该怎么做呢，首先我们要知道我们要换多少种皮肤，然后分别创建不同皮肤的样式表，比如上面的，我们可以创建3个样式表</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> helper = &#123;</div><div class="line">  shuffle: <span class="function"><span class="keyword">function</span> (<span class="params">array</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> currentIndex = array.length</div><div class="line">    <span class="keyword">var</span> temporaryValue</div><div class="line">    <span class="keyword">var</span> randomIndex</div><div class="line">    <span class="keyword">while</span> (currentIndex !== <span class="number">0</span>) &#123;</div><div class="line">      randomIndex = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * currentIndex)</div><div class="line">      currentIndex -= <span class="number">1</span></div><div class="line">      temporaryValue = array[currentIndex]</div><div class="line">      array[currentIndex] = array[randomIndex]</div><div class="line">      array[randomIndex] = temporaryValue</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> array</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">helper.shuffle(array); </div><div class="line">array.scile(<span class="number">0</span>,n);</div></pre></td></tr></table></figure>
+<ul>
+<li>skin_0.css</li>
+<li>skin_1.css</li>
+<li><p>skin_1.css</p>
+<p>在开始时，我们需要在head引入其中一个样式表，给样式表加一个id</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link href=&quot;skin_0.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; id=&quot;cssfile&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>在讲重要的js部位的时候先给页面加点css</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">	 body,</div><div class="line">    ul,</div><div class="line">    li &#123;</div><div class="line">        margin: 0;</div><div class="line">        padding: 0;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    html,</div><div class="line">    body &#123;</div><div class="line">        height: 100%;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    body &#123;</div><div class="line">        font: 12px/1.5 Tahoma;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    li &#123;</div><div class="line">        list-style-type: none;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    a:link,</div><div class="line">    a:visited &#123;</div><div class="line">        text-decoration: none;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    a:hover &#123;</div><div class="line">        text-decoration: underline;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    #outer &#123;</div><div class="line">        width: 500px;</div><div class="line">        margin: 0 auto;</div><div class="line">        overflow: hidden;</div><div class="line">        zoom: 1;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    #skin,</div><div class="line">    #nav &#123;</div><div class="line">        overflow: hidden;</div><div class="line">        zoom: 1;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    #skin &#123;</div><div class="line">        margin: 10px 0;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    #skin li &#123;</div><div class="line">        float: left;</div><div class="line">        width: 6px;</div><div class="line">        height: 6px;</div><div class="line">        cursor: pointer;</div><div class="line">        overflow: hidden;</div><div class="line">        margin-right: 10px;</div><div class="line">        text-indent: -9999px;</div><div class="line">        border-width: 4px;</div><div class="line">        border-style: solid;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    #skin li &#123;</div><div class="line">        background: #fff;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    #skin_0 &#123;</div><div class="line">        border-color: red;</div><div class="line">        background: red;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    #skin_1 &#123;</div><div class="line">        border-color: green;</div><div class="line">        background: green;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    #skin_2 &#123;</div><div class="line">        border-color: yellow;</div><div class="line">        background: yellow;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>接下来是重点的js部分，废话不多说，直接上代码</p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">$(function() &#123;</div><div class="line">    var $li = $(&quot;#skin li&quot;);</div><div class="line">    $li.click(function() &#123;</div><div class="line">        changeSkin(this.id);</div><div class="line">    &#125;);</div><div class="line">    var mySkin = $.cookie(&quot;mySkin&quot;);</div><div class="line">    if (mySkin) &#123;</div><div class="line">        changeSkin(mySkin);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">function changeSkin(skinName) &#123;</div><div class="line">    $(&quot;#cssfile&quot;).attr(&quot;href&quot;, skinName + &quot;.css&quot;); //设置不同皮肤</div><div class="line">    $.cookie(&quot;mySkin&quot;, skinName, &#123;</div><div class="line">        path: &apos;/&apos;,</div><div class="line">        expires: 10</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>效果我就不展示了，大家可以试一下，记得引入juqery</p>
+</blockquote>
 
       
     </div>
@@ -350,11 +368,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/css/" rel="tag">#css</a>
+          
             <a href="/tags/前端/" rel="tag">#前端</a>
           
             <a href="/tags/js/" rel="tag">#js</a>
-          
-            <a href="/tags/数组/" rel="tag">#数组</a>
           
         </div>
       
@@ -363,17 +381,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/17/下拉列表自定义样式/" rel="next" title="下拉列表自定义样式">
-                <i class="fa fa-chevron-left"></i> 下拉列表自定义样式
+              <a href="/2016/10/08/vue-js学习笔记一/" rel="next" title="vue.js学习笔记一">
+                <i class="fa fa-chevron-left"></i> vue.js学习笔记一
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/24/手机端二级菜单图标转换/" rel="prev" title="手机端二级菜单图标转换">
-                手机端二级菜单图标转换 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -388,10 +402,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/08/17/数组打乱随机抽取/"
-     data-title="数组的打乱及随机抽取"
+        <div class="ds-share flat" data-thread-key="2016/10/17/网页换肤实现/"
+     data-title="网页换肤实现"
      data-content=""
-     data-url="http://yoursite.com/2016/08/17/数组打乱随机抽取/">
+     data-url="http://yoursite.com/2016/10/17/网页换肤实现/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -418,8 +432,8 @@
 
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/17/数组打乱随机抽取/"
-           data-title="数组的打乱及随机抽取" data-url="http://yoursite.com/2016/08/17/数组打乱随机抽取/">
+      <div class="ds-thread" data-thread-key="2016/10/17/网页换肤实现/"
+           data-title="网页换肤实现" data-url="http://yoursite.com/2016/10/17/网页换肤实现/">
       </div>
     
   </div>
@@ -539,7 +553,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何把数组打乱随机抽取N个组成新的数组"><span class="nav-number">1.</span> <span class="nav-text">如何把数组打乱随机抽取N个组成新的数组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#最近做一个项目，需要换肤，觉得自己有必要把这个东西写一下，越是简单的东西越容易被忽略嘛"><span class="nav-number">1.</span> <span class="nav-text">最近做一个项目，需要换肤，觉得自己有必要把这个东西写一下，越是简单的东西越容易被忽略嘛</span></a></li></ol></div>
             
           </div>
         </section>
