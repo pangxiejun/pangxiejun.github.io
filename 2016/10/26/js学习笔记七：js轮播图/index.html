@@ -1,0 +1,702 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="轮播,js,前端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://cdn.weazm.com/blog_favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="今天无意间看到一个轮播图，想来一直都是用swiper插件做，由于最近一直在学js,便想着用js自己写一下，没想到竟无从下手，实在惭愧，后查阅资料，才勉强写了一个，为使自己加深印象，写此笔记…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js学习笔记七：js轮播图">
+<meta property="og:url" content="http://yoursite.com/2016/10/26/js学习笔记七：js轮播图/index.html">
+<meta property="og:site_name" content="crab">
+<meta property="og:description" content="今天无意间看到一个轮播图，想来一直都是用swiper插件做，由于最近一直在学js,便想着用js自己写一下，没想到竟无从下手，实在惭愧，后查阅资料，才勉强写了一个，为使自己加深印象，写此笔记…">
+<meta property="og:updated_time" content="2016-10-27T02:38:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js学习笔记七：js轮播图">
+<meta name="twitter:description" content="今天无意间看到一个轮播图，想来一直都是用swiper插件做，由于最近一直在学js,便想着用js自己写一下，没想到竟无从下手，实在惭愧，后查阅资料，才勉强写了一个，为使自己加深印象，写此笔记…">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6304517347507963000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/26/js学习笔记七：js轮播图/"/>
+
+  <title> js学习笔记七：js轮播图 | crab </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">crab</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                js学习笔记七：js轮播图
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-26T15:58:34+08:00" content="2016-10-26">
+              2016-10-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+                
+                
+
+              
+              <span class="post-count"> 总共码出了2,896字 </span>
+            </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/26/js学习笔记七：js轮播图/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/26/js学习笔记七：js轮播图/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="今天无意间看到一个轮播图，想来一直都是用swiper插件做，由于最近一直在学js-便想着用js自己写一下，没想到竟无从下手，实在惭愧，后查阅资料，才勉强写了一个，为使自己加深印象，写此笔记…"><a href="#今天无意间看到一个轮播图，想来一直都是用swiper插件做，由于最近一直在学js-便想着用js自己写一下，没想到竟无从下手，实在惭愧，后查阅资料，才勉强写了一个，为使自己加深印象，写此笔记…" class="headerlink" title="今天无意间看到一个轮播图，想来一直都是用swiper插件做，由于最近一直在学js,便想着用js自己写一下，没想到竟无从下手，实在惭愧，后查阅资料，才勉强写了一个，为使自己加深印象，写此笔记…"></a>今天无意间看到一个轮播图，想来一直都是用swiper插件做，由于最近一直在学js,便想着用js自己写一下，没想到竟无从下手，实在惭愧，后查阅资料，才勉强写了一个，为使自己加深印象，写此笔记…</h4><a id="more"></a>
+<blockquote>
+<p>首先看一下布局，我想大家都知道了，就直接上代码</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;div id="box"&gt;</div><div class="line">	&lt;div class="list"&gt;</div><div class="line">		&lt;ul class="clearfix" id="list"&gt;</div><div class="line">			&lt;li&gt;&lt;img src="img/01.jpg" alt="" width="490" height="170"&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;img src="img/02.jpg" alt="" width="490" height="170"&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;img src="img/03.jpg" alt="" width="490" height="170"&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;img src="img/02.jpg" alt="" width="490" height="170"&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;img src="img/03.jpg" alt="" width="490" height="170"&gt;&lt;/li&gt;</div><div class="line">		&lt;/ul&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;div id="left"&gt;&lt;&lt;/div&gt;</div><div class="line">	&lt;div id="right"&gt;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>图片的大小依情况而定，接下来给他们设置样式</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;style type="text/css"&gt;</div><div class="line">	*&#123;padding: 0;margin: 0;&#125;</div><div class="line">	ul&#123;list-style:none;&#125;</div><div class="line">	body&#123;background:#000;text-align:center;font:12px/20px Arial;&#125;</div><div class="line">	#box&#123;position:relative;width:490px;height:172px;background:#fff;border-radius:5px;border:8px solid #fff;margin:10px auto;cursor:pointer;overflow:hidden;&#125;</div><div class="line">	#box .list&#123;position:relative;width:10000px;height:170px;&#125;</div><div class="line">	#box .list ul&#123;position:absolute;top:0;left:0;&#125;</div><div class="line">	#box .list li&#123;width:490px;height:170px;overflow:hidden;float:left;&#125;</div><div class="line">	#box .count&#123;position:absolute;right:0;bottom:5px;&#125;</div><div class="line">	#box .count li&#123;color:#fff;float:left;width:20px;height:20px;cursor:pointer;margin-right:5px;overflow:hidden;background:#F90;opacity:0.7;filter:alpha(opacity=70);border-radius:20px;&#125;</div><div class="line">	#box .count li.current&#123;color:#fff;opacity:1;filter:alpha(opacity=100);font-weight:700;background:#f60;&#125;</div><div class="line">	#tmp&#123;width:100px;height:100px;background:red;position:absolute;&#125;</div><div class="line">	.clearfix&#123;zoom:1;overflow:hidden;&#125;</div><div class="line"></div><div class="line">	#left&#123;position:absolute;left:10px;top:50%;margin-top:-10px;width:20px;height:20px;background:#f90; color:#fff;font-size:15px;border-radius:10px;line-height:20px;&#125;</div><div class="line">	#right&#123;position:absolute;right:10px;top:50%;margin-top:-10px;width:20px;height:20px;background:#f90;color:#fff;font-size:15px;border-radius:10px;line-height:20px;&#125;</div><div class="line"></div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>可能有点乱，没事，习惯就好，哈哈哈，强迫症只能说I am sorry.接下来就是js了，也就不说废话了，大家都看的懂</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="comment">//页面加载事件</span></div><div class="line">	<span class="built_in">window</span>.onload =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">"box"</span>);</div><div class="line">		<span class="keyword">var</span> list = box.getElementsByTagName(<span class="string">"ul"</span>)[<span class="number">0</span>];</div><div class="line">		<span class="keyword">var</span> img = box.getElementsByTagName(<span class="string">"img"</span>);</div><div class="line">		<span class="keyword">var</span> left = <span class="built_in">document</span>.getElementById(<span class="string">"left"</span>);</div><div class="line">		<span class="keyword">var</span> right = <span class="built_in">document</span>.getElementById(<span class="string">"right"</span>);</div><div class="line">		<span class="keyword">var</span> index = i =<span class="number">0</span>;</div><div class="line">		<span class="keyword">var</span> timer =playTimer =<span class="literal">null</span>;</div><div class="line">		<span class="keyword">var</span> tmp = [];</div><div class="line">		<span class="keyword">var</span> btn = <span class="literal">null</span>;</div><div class="line">		order= <span class="literal">true</span>;</div><div class="line"></div><div class="line">		<span class="comment">// 添加数字按钮</span></div><div class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;img.length;i++)&#123;</div><div class="line">			tmp.push(<span class="string">"&lt;li&gt;"</span>+(i+<span class="number">1</span>)+<span class="string">"&lt;/li&gt;"</span>)</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">//插入元素</span></div><div class="line">		<span class="keyword">var</span> count = <span class="built_in">document</span>.createElement(<span class="string">"ul"</span>);</div><div class="line">		count.className=<span class="string">"count"</span>;</div><div class="line">		count.innerHTML = tmp.join(<span class="string">""</span>);</div><div class="line">		box.appendChild(count);</div><div class="line">		btn= box.getElementsByTagName(<span class="string">"ul"</span>)[<span class="number">1</span>].getElementsByTagName(<span class="string">"li"</span>);</div><div class="line"></div><div class="line">		cutover();</div><div class="line"></div><div class="line">	<span class="comment">//按钮点击切换</span></div><div class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;btn.length;i++)&#123;</div><div class="line">		btn[i] .index=i;</div><div class="line">		btn[i].onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			index = <span class="keyword">this</span>.index;</div><div class="line">			<span class="comment">//初始化</span></div><div class="line">			cutover();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">//初始化</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">cutover</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;btn.length;i++)&#123;</div><div class="line">			btn[i].className = <span class="string">""</span>;</div><div class="line">		&#125;</div><div class="line">		btn[index].className = <span class="string">"current"</span>;</div><div class="line">		startMove(-(index*img[<span class="number">0</span>].offsetWidth));</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">//next</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		order?index++ : index--;</div><div class="line">		index &lt;= <span class="number">0</span> &amp;&amp; (index = <span class="number">0</span> ,order =<span class="literal">true</span>);</div><div class="line">		<span class="comment">// alert(index);</span></div><div class="line">		index &gt;= btn.length<span class="number">-1</span> &amp;&amp; (index = btn.length<span class="number">-1</span> ,order=<span class="literal">false</span>);</div><div class="line">		<span class="comment">// alert(index);</span></div><div class="line">		cutover();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	left.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(index);</div><div class="line">		index--;</div><div class="line">		<span class="keyword">if</span>(index &lt; <span class="number">0</span>)&#123;</div><div class="line">			index = btn.length - <span class="number">1</span>, order = <span class="literal">false</span>;</div><div class="line">			<span class="built_in">console</span>.log(index)</div><div class="line">		&#125;</div><div class="line">		cutover();</div><div class="line">	&#125;</div><div class="line">	right.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		index++;</div><div class="line">		<span class="keyword">if</span>(index &gt; btn.length<span class="number">-1</span>)&#123;</div><div class="line">			index = <span class="number">0</span> ,order =<span class="literal">true</span>;</div><div class="line">			<span class="built_in">console</span>.log(index)</div><div class="line">		&#125;</div><div class="line">		cutover();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	playTimer = setInterval(next , <span class="number">2000</span>);</div><div class="line"></div><div class="line">	<span class="comment">//事件</span></div><div class="line">	<span class="comment">//鼠标移入</span></div><div class="line">	box.onmouseover= <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		clearInterval(playTimer);</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	<span class="comment">//鼠标移除</span></div><div class="line">	box.onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		playTimer = setInterval(next , <span class="number">2000</span>);</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	<span class="comment">//开始移动</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">startMove</span>(<span class="params">iTarget</span>)</span>&#123;</div><div class="line">		clearInterval(timer);</div><div class="line">		timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			doMove(iTarget)</div><div class="line">		&#125;,<span class="number">30</span>)</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">//移动多少</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">doMove</span>(<span class="params">iTarget</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> speed = (iTarget - list.offsetLeft)/<span class="number">10</span>;</div><div class="line">		speed = speed&gt;<span class="number">0</span>? <span class="built_in">Math</span>.ceil(speed):<span class="built_in">Math</span>.floor(speed);</div><div class="line">		list.offsetLeft == iTarget ? clearInterval(timer) : list.style.left = list.offsetLeft + speed +<span class="string">"px"</span>;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>鄙人不才，只能做到这份上了，有更好的方法希望各位指点一二</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/轮播/" rel="tag">#轮播</a>
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/前端/" rel="tag">#前端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/17/网页换肤实现/" rel="next" title="网页换肤实现">
+                <i class="fa fa-chevron-left"></i> 网页换肤实现
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/26/js学习笔记七：js轮播图/"
+     data-title="js学习笔记七：js轮播图"
+     data-content=""
+     data-url="http://yoursite.com/2016/10/26/js学习笔记七：js轮播图/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          <!--  -->
+
+          
+
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/26/js学习笔记七：js轮播图/"
+           data-title="js学习笔记七：js轮播图" data-url="http://yoursite.com/2016/10/26/js学习笔记七：js轮播图/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://cdn.weazm.com/blog_px.png"
+               alt="crab" />
+          <p class="site-author-name" itemprop="name">crab</p>
+          <p class="site-description motion-element" itemprop="description">天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pangxiejun" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/gzp" target="_blank" title="coding">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  coding
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5816049613/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#今天无意间看到一个轮播图，想来一直都是用swiper插件做，由于最近一直在学js-便想着用js自己写一下，没想到竟无从下手，实在惭愧，后查阅资料，才勉强写了一个，为使自己加深印象，写此笔记…"><span class="nav-number">1.</span> <span class="nav-text">今天无意间看到一个轮播图，想来一直都是用swiper插件做，由于最近一直在学js,便想着用js自己写一下，没想到竟无从下手，实在惭愧，后查阅资料，才勉强写了一个，为使自己加深印象，写此笔记…</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">crab</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<div align="center"><a href="http://www.amazingcounters.com">
+<img border="0" src="http://cc.amazingcounters.com/counter.php?i=3206284&c=9619165" alt="AmazingCounters.com">位客官光临本店
+</a></div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crabluck"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
