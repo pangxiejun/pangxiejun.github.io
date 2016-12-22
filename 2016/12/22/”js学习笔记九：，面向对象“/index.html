@@ -1,0 +1,713 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端,js,对象," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://cdn.weazm.com/blog_favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="面向对象可以说是javascript里面比较难得一个知识点了，到现在我还是有些懵懵懂懂的。。。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="”js学习笔记九：，面向对象“">
+<meta property="og:url" content="http://yoursite.com/2016/12/22/”js学习笔记九：，面向对象“/index.html">
+<meta property="og:site_name" content="crab">
+<meta property="og:description" content="面向对象可以说是javascript里面比较难得一个知识点了，到现在我还是有些懵懵懂懂的。。。">
+<meta property="og:updated_time" content="2016-12-22T08:02:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="”js学习笔记九：，面向对象“">
+<meta name="twitter:description" content="面向对象可以说是javascript里面比较难得一个知识点了，到现在我还是有些懵懵懂懂的。。。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6304517347507963000,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/22/”js学习笔记九：，面向对象“/"/>
+
+  <title> ”js学习笔记九：，面向对象“ | crab </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">crab</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ”js学习笔记九：，面向对象“
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-22T14:40:15+08:00" content="2016-12-22">
+              2016-12-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+                
+                
+
+              
+              <span class="post-count"> 总共码出了2,852字 </span>
+            </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/22/”js学习笔记九：，面向对象“/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/22/”js学习笔记九：，面向对象“/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="面向对象可以说是javascript里面比较难得一个知识点了，到现在我还是有些懵懵懂懂的。。。"><a href="#面向对象可以说是javascript里面比较难得一个知识点了，到现在我还是有些懵懵懂懂的。。。" class="headerlink" title="面向对象可以说是javascript里面比较难得一个知识点了，到现在我还是有些懵懵懂懂的。。。"></a>面向对象可以说是javascript里面比较难得一个知识点了，到现在我还是有些懵懵懂懂的。。。</h4><a id="more"></a>
+<h5 id="什么是面向对象编程"><a href="#什么是面向对象编程" class="headerlink" title="什么是面向对象编程"></a>什么是面向对象编程</h5><p>面向对象编程（Object Oriented Programming,OOP,面向对象程序设计）是一种计算机编程架构，OOP的一条基本原则是计算机程序是由单个能够起到子程序作用的单元或对象组合而成，OOP达到了软件工程的三个目标：重用性、灵活性和扩展性。</p>
+<h5 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a>面向对象的三大特性</h5><p>*封装：找到变化并且把它封装起来，你就可以在不影响其它部分的情况下修改或扩展被封装的变化部分，这是所有设计模式的基础，就是封装变化，因此封装的作用，就解决了程序的可扩展性。</p>
+<p>*继承：子类继承父类，可以继承父类的方法及属性，实现了多态以及代码的重用，因此也解决了系统的重用性和扩展性，但是继承破坏了封装，因为他是对子类开放的，修改父类会导致所有子类的改变，因此继承一定程度上又破坏了系统的可扩展性，所以继承需要慎用，只有明确的IS-A关系才能使用，同时继承在在程序开发过程中重构得到的，而不是程序设计之初就使用继承，很多面向对象开发者滥用继承，结果造成后期的代码解决不了需求的变化了。因此优先使用组合，而不是继承，是面向对象开发中一个重要的经验。</p>
+<p>*多态：接口的多种不同的实现方式即为多态。接口是对行为的抽象，刚才在封装提到，找到变化部分并封装起来，但是封装起来后，怎么适应接下来的变化？这正是接口的作用，接口的主要目的是为不相关的类提供通用的处理服务,我们可以想象一下。比如鸟会飞，但是超人也会飞，通过飞这个接口，我们可以让鸟和超人，都实现这个接口，这就实现了系统的可维护性，可扩展性。</p>
+<h5 id="面向对象编程使用"><a href="#面向对象编程使用" class="headerlink" title="面向对象编程使用"></a>面向对象编程使用</h5><blockquote>
+<p>首先我们先写一个对象</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> person =&#123;</div><div class="line">    name:<span class="string">'xiaoming'</span>,</div><div class="line">    age:<span class="number">22</span>,</div><div class="line">    say:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">"hello word"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//访问对象属性</span></div><div class="line">  box.name <span class="comment">//xiaoming</span></div><div class="line">  box.age <span class="comment">//22</span></div><div class="line">  box.say() <span class="comment">//hello word</span></div><div class="line">  <span class="comment">//不难发现的一点是，通过上面的方法定义的对象，缺少了复用性。也就是说，我们每次都要写name、age、run等等等等，才能创建一个新的对象实例，这肯定是不合理的。为了能够得到更好的封装效果，我们可以通过一个function来统一地构建一个对象的实例，比如</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name:name,</div><div class="line">    <span class="keyword">this</span>.age:age,</div><div class="line">    <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="keyword">this</span>.age</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//通过new来实例化</span></div><div class="line">  <span class="keyword">var</span> tom = <span class="keyword">new</span> Person(<span class="string">'tom'</span>,<span class="number">22</span>);</div><div class="line">  <span class="keyword">var</span> jon = <span class="keyword">new</span> Person(<span class="string">'jon'</span>,<span class="number">24</span>);</div><div class="line">  tom.say() == jon.say() <span class="comment">//false</span></div><div class="line"></div><div class="line">  <span class="comment">//通过例子，我们还可以发现jon和tom的say并不指向不一个内存，也就意味着，当我们有很多实例的时候，内存开销会非常大。</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>但是上面的明显有一个缺点，就是他们的成员并不公用，很明显这不是一个很好的实现方法，为了实现公用性，我们就得引入原型这个概念了</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name:name,</div><div class="line">    <span class="keyword">this</span>.age:age,</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//通过原型来构建方法</span></div><div class="line">  Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name+<span class="keyword">this</span>.age</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//通过new来实例化</span></div><div class="line">  <span class="keyword">var</span> tom = <span class="keyword">new</span> Person(<span class="string">'tom'</span>,<span class="number">22</span>);</div><div class="line">  <span class="keyword">var</span> jon = <span class="keyword">new</span> Person(<span class="string">'jon'</span>,<span class="number">24</span>);</div><div class="line">  tom.say() == jon.say() <span class="comment">//true</span></div><div class="line"></div><div class="line">  <span class="comment">//结果很明显，这次两个不同实例的say是相同的了，这意味着不同实例间共用了该方法。有了原型，我们就可以扩展出很多方法</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>上面讲的是封装，接下来我们讲一下继承与多态</p>
+</blockquote>
+<p>继承其实就是即拥有自己定义的成员，也拥有父类型定义的成员，并且可以重写父类型的成员。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name:name,</div><div class="line">    <span class="keyword">this</span>.age:age,</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//通过原型来构建方法</span></div><div class="line">  Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name+<span class="keyword">this</span>.age</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//通过new来实例化</span></div><div class="line">  <span class="keyword">var</span> tom = <span class="keyword">new</span> Person(<span class="string">'tom'</span>,<span class="number">22</span>);</div><div class="line">  <span class="keyword">var</span> jon = <span class="keyword">new</span> Person(<span class="string">'jon'</span>,<span class="number">24</span>);</div><div class="line">  <span class="built_in">console</span>.log(tom <span class="keyword">instanceof</span> Person) <span class="comment">//true</span></div><div class="line">  <span class="built_in">console</span>.log(tom <span class="keyword">instanceof</span> <span class="built_in">Object</span>) <span class="comment">//true</span></div><div class="line"></div><div class="line">  <span class="comment">//构造器Person创建了一个新的Person实例，实例tom的原型是Person.prototype,Person.prototype的原型是Object,这个过程创建了一个原型链，tom和jon继承了它们的成员</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>多态一般和继承一起说，跟继承有些相似，在同一个方法中，由于参数不同而导致执行效果各异的现象就是多态。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name:name,</div><div class="line">    <span class="keyword">this</span>.age:age,</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//通过原型来构建方法</span></div><div class="line">  Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name+<span class="keyword">this</span>.age</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//通过new来实例化</span></div><div class="line">  <span class="keyword">var</span> tom = <span class="keyword">new</span> Person(<span class="string">'tom'</span>,<span class="number">22</span>);</div><div class="line">  <span class="keyword">var</span> jon = <span class="keyword">new</span> Person(<span class="string">'jon'</span>,<span class="number">24</span>);</div><div class="line">  <span class="built_in">console</span>.log(tom.say()) <span class="comment">//tom22</span></div><div class="line">  <span class="built_in">console</span>.log(jon.say()) <span class="comment">//jon24</span></div><div class="line">  <span class="comment">//不是特别理解多态性，希望各位能人能指点一二</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>结语，写的太乱，不要太见怪！</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag">#前端</a>
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/对象/" rel="tag">#对象</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/21/js学习笔记八：瀑布流/" rel="next" title="js学习笔记八：瀑布流">
+                <i class="fa fa-chevron-left"></i> js学习笔记八：瀑布流
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/12/22/”js学习笔记九：，面向对象“/"
+     data-title="”js学习笔记九：，面向对象“"
+     data-content=""
+     data-url="http://yoursite.com/2016/12/22/”js学习笔记九：，面向对象“/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          <!--  -->
+
+          
+
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/22/”js学习笔记九：，面向对象“/"
+           data-title="”js学习笔记九：，面向对象“" data-url="http://yoursite.com/2016/12/22/”js学习笔记九：，面向对象“/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://cdn.weazm.com/blog_px.png"
+               alt="crab" />
+          <p class="site-author-name" itemprop="name">crab</p>
+          <p class="site-description motion-element" itemprop="description">天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pangxiejun" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/gzp" target="_blank" title="coding">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  coding
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5816049613/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象可以说是javascript里面比较难得一个知识点了，到现在我还是有些懵懵懂懂的。。。"><span class="nav-number">1.</span> <span class="nav-text">面向对象可以说是javascript里面比较难得一个知识点了，到现在我还是有些懵懵懂懂的。。。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是面向对象编程"><span class="nav-number">1.1.</span> <span class="nav-text">什么是面向对象编程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面向对象的三大特性"><span class="nav-number">1.2.</span> <span class="nav-text">面向对象的三大特性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面向对象编程使用"><span class="nav-number">1.3.</span> <span class="nav-text">面向对象编程使用</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">crab</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<div align="center"><a href="http://www.amazingcounters.com">
+<img border="0" src="http://cc.amazingcounters.com/counter.php?i=3206284&c=9619165" alt="AmazingCounters.com">位客官光临本店
+</a></div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crabluck"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
